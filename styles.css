@@ -1,0 +1,226 @@
+/* ===================== Polygon Plus 1.1 ===================== */
+
+:root {
+  --pgx-accent: #4f7cff;
+  --pgx-bg: #f3f4f8;
+  --pgx-surface: #ffffff;
+  --pgx-line: #e2e5ee;
+  --pgx-text: #1c2230;
+  --pgx-muted: #6b7385;
+  --pgx-radius: 10px;
+}
+
+html.pgx-on-modern { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #9aa3b5 transparent; }
+html.pgx-on-modern ::selection { background: color-mix(in srgb, var(--pgx-accent) 35%, transparent); }
+html.pgx-on-modern ::-webkit-scrollbar { width: 10px; height: 10px; }
+html.pgx-on-modern ::-webkit-scrollbar-thumb { background: #9aa3b580; border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+
+/* ---------- Dark ---------- */
+html.pgx-on-dark { color-scheme: dark; background: #0f1115; }
+html.pgx-on-dark body { background-color: #12141a; color: #e6e9f0; }
+html.pgx-on-dark:not(.pgx-ready) body { visibility: hidden; }
+html.pgx-on-dark ::placeholder { color: #8b93a7; }
+html.pgx-on-dark ::-webkit-scrollbar-thumb { background: #3a4152; background-clip: content-box; }
+html.pgx-on-dark { scrollbar-color: #3a4152 transparent; }
+
+/* ---------- Base ---------- */
+html.pgx-on-modern body {
+  font-family: "Inter", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--pgx-text);
+  background: var(--pgx-bg);
+  -webkit-font-smoothing: antialiased;
+}
+html.pgx-on-modern a { color: var(--pgx-accent); text-decoration: none; transition: color .15s, opacity .15s; }
+html.pgx-on-modern a:hover { text-decoration: underline; text-underline-offset: 3px; }
+html.pgx-on-modern hr { border: 0; border-top: 1px solid var(--pgx-line); margin: 14px 0; }
+html.pgx-on-modern :focus-visible { outline: 2px solid var(--pgx-accent); outline-offset: 2px; border-radius: 4px; }
+html.pgx-on-modern input[type="checkbox"],
+html.pgx-on-modern input[type="radio"] { accent-color: var(--pgx-accent); }
+
+/* ---------- Cards ---------- */
+html.pgx-on-modern .pgx-card {
+  border-radius: 12px !important;
+  box-shadow: 0 1px 2px rgba(20, 24, 40, .06), 0 6px 20px rgba(20, 24, 40, .05);
+}
+html.pgx-on-dark .pgx-card { box-shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .25); }
+
+/* ---------- Tabelas de dados ---------- */
+html.pgx-on-modern table.pgx-data {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--pgx-line) !important;
+  border-radius: 10px;
+  background: var(--pgx-surface);
+}
+html.pgx-on-modern table.pgx-data th,
+html.pgx-on-modern table.pgx-data td {
+  border: 0 !important;
+  border-bottom: 1px solid var(--pgx-line) !important;
+  padding: 9px 12px;
+  vertical-align: middle;
+}
+html.pgx-on-modern table.pgx-data th {
+  background: #eef1f7;
+  color: #3a4253;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+html.pgx-on-modern table.pgx-data tr:first-child > th:first-child { border-top-left-radius: 9px; }
+html.pgx-on-modern table.pgx-data tr:first-child > th:last-child  { border-top-right-radius: 9px; }
+html.pgx-on-modern table.pgx-data tr:last-child > td { border-bottom: 0 !important; }
+html.pgx-on-modern table.pgx-data tr:last-child > td:first-child { border-bottom-left-radius: 9px; }
+html.pgx-on-modern table.pgx-data tr:last-child > td:last-child  { border-bottom-right-radius: 9px; }
+/* zebra e hover por sombra interna: não sobrescreve a cor de linhas marcadas (ex.: vermelho) */
+html.pgx-on-modern table.pgx-data tbody tr:nth-child(even) > td { box-shadow: inset 0 0 0 999px rgba(127, 127, 140, .06); }
+html.pgx-on-modern table.pgx-data tbody tr:hover > td { box-shadow: inset 0 0 0 999px color-mix(in srgb, var(--pgx-accent) 12%, transparent); }
+html.pgx-compact.pgx-on-modern table.pgx-data th,
+html.pgx-compact.pgx-on-modern table.pgx-data td { padding: 4px 8px; }
+html.pgx-compact.pgx-on-modern body { font-size: 13px; line-height: 1.4; }
+
+/* ---------- Campos e botões ---------- */
+html.pgx-on-modern input[type="text"],
+html.pgx-on-modern input[type="search"],
+html.pgx-on-modern input[type="password"],
+html.pgx-on-modern input[type="number"],
+html.pgx-on-modern input[type="email"],
+html.pgx-on-modern input[type="url"],
+html.pgx-on-modern select,
+html.pgx-on-modern textarea {
+  border: 1px solid #c9ced9;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: var(--pgx-surface);
+  color: inherit;
+  font: inherit;
+  box-sizing: border-box;
+  transition: border-color .15s, box-shadow .15s;
+}
+html.pgx-on-modern input:focus,
+html.pgx-on-modern select:focus,
+html.pgx-on-modern textarea:focus {
+  outline: none;
+  border-color: var(--pgx-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pgx-accent) 25%, transparent);
+}
+html.pgx-on-modern input[type="submit"],
+html.pgx-on-modern input[type="button"],
+html.pgx-on-modern button {
+  border: 0;
+  background: var(--pgx-accent);
+  color: #fff;
+  border-radius: 8px;
+  padding: 7px 16px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+  transition: filter .15s, transform .05s;
+}
+html.pgx-on-modern input[type="submit"]:hover,
+html.pgx-on-modern input[type="button"]:hover,
+html.pgx-on-modern button:hover { filter: brightness(1.1); }
+html.pgx-on-modern input[type="submit"]:active,
+html.pgx-on-modern input[type="button"]:active,
+html.pgx-on-modern button:active { transform: translateY(1px); }
+
+/* ---------- Código ---------- */
+html.pgx-on-modern textarea,
+html.pgx-on-modern pre,
+html.pgx-on-modern code,
+html.pgx-on-modern tt,
+html.pgx-on-modern .ace_editor {
+  font-family: "JetBrains Mono", "Fira Code", Consolas, "DejaVu Sans Mono", monospace !important;
+  font-size: 13px;
+}
+html.pgx-on-modern pre {
+  background: #f0f2f7;
+  border: 1px solid var(--pgx-line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  overflow: auto;
+}
+html.pgx-on-modern code:not(pre code) { background: rgba(127, 127, 140, .14); padding: 1px 5px; border-radius: 4px; }
+
+pre.pgx-has-copy { position: relative; }
+.pgx-copy { position: absolute; top: 6px; right: 6px; opacity: 0; font-size: 11px !important; padding: 3px 9px !important; transition: opacity .15s; user-select: none; }
+pre.pgx-has-copy:hover > .pgx-copy { opacity: .95; }
+html:not(.pgx-on-copy) .pgx-copy { display: none; }
+
+/* ---------- Largura total ---------- */
+html.pgx-on-wide body { padding-left: 2vw; padding-right: 2vw; max-width: none !important; }
+html.pgx-on-wide body > div,
+html.pgx-on-wide body > table { max-width: none !important; }
+
+/* ---------- Filtro ---------- */
+.pgx-filter { display: block; width: min(420px, 100%); margin: 10px 0; }
+html:not(.pgx-on-filter) .pgx-filter { display: none; }
+
+/* ---------- Veredictos ---------- */
+html.pgx-on-verdicts .pgx-verdict { font-weight: 600; border-radius: 999px; padding: 2px 9px; font-size: 12px; white-space: nowrap; }
+html.pgx-on-verdicts .pgx-ok   { color: #0a7a2f; background: #e3f6e9; }
+html.pgx-on-verdicts .pgx-bad  { color: #b42318; background: #fde8e6; }
+html.pgx-on-verdicts .pgx-warn { color: #9a5b00; background: #fff1d6; }
+html.pgx-on-verdicts .pgx-run  { color: #1d4fd8; background: #e5edff; }
+
+/* ---------- Voltar ao topo ---------- */
+#pgx-totop {
+  position: fixed; right: 20px; bottom: 20px;
+  width: 40px; height: 40px; padding: 0 !important;
+  border-radius: 50% !important; font-size: 18px; line-height: 1;
+  opacity: 0; pointer-events: none; transition: opacity .2s;
+  z-index: 9999;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .3) !important;
+}
+#pgx-totop.pgx-show { opacity: .92; pointer-events: auto; }
+html:not(.pgx-on-totop) #pgx-totop { display: none; }
+
+/* ===================== v1.2 ===================== */
+
+/* Dark: o Polygon pinta :hover de linhas com fundo claro; usamos só o nosso realce */
+html.pgx-on-dark tr:hover,
+html.pgx-on-dark tr:hover > td,
+html.pgx-on-dark tr:hover > th { background-color: transparent !important; }
+
+/* Respiro no topo (logo não encosta na borda) + entrada suave */
+html.pgx-on-modern body { padding-top: 14px; animation: pgx-fade .25s ease-out; }
+@keyframes pgx-fade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+
+/* Datas sem quebra de linha */
+.pgx-nowrap { white-space: nowrap; }
+
+/* Transição suave no realce das linhas */
+html.pgx-on-modern table.pgx-data td { transition: box-shadow .12s; }
+
+/* Menu superior em "pílulas" */
+html.pgx-on-modern .pgx-nav a {
+  display: inline-block;
+  padding: 3px 11px;
+  border-radius: 999px;
+  transition: background-color .15s, color .15s;
+}
+html.pgx-on-modern .pgx-nav a:hover { background: rgba(127, 127, 140, .18); text-decoration: none; }
+html.pgx-on-modern .pgx-nav a.pgx-nav-current {
+  background: color-mix(in srgb, var(--pgx-accent) 22%, transparent);
+  color: var(--pgx-accent);
+}
+
+/* Linhas com realce marcado (ex.: working copy modificada) ganham uma barrinha lateral */
+html.pgx-on-modern table.pgx-data tbody tr > td:first-child { transition: box-shadow .12s; }
+
+/* Estrelas e checkboxes mais discretos; rodapé suave */
+html.pgx-on-modern body > div:last-child { color: var(--pgx-muted); }
+
+/* Título da página (ex.: "Problems: 10") mais marcante */
+html.pgx-on-modern h1, html.pgx-on-modern h2, html.pgx-on-modern h3 { letter-spacing: -.01em; font-weight: 650; }
+
+/* Links do painel lateral e ações de linha com respiro */
+html.pgx-on-modern table.pgx-data td a { padding: 1px 2px; border-radius: 4px; }
+html.pgx-on-modern table.pgx-data td a:hover { background: color-mix(in srgb, var(--pgx-accent) 14%, transparent); text-decoration: none; }

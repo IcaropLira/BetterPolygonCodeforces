@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font: 14px -apple-system, "Segoe UI", Roboto, sans-serif; width: 290px; margin: 0; padding: 14px 16px; color: #1f2430; }
+    h1 { font-size: 16px; margin: 0 0 10px; }
+    h2 { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #6b7280; margin: 14px 0 4px; }
+    label { display: flex; align-items: center; gap: 8px; padding: 4px 0; cursor: pointer; }
+    .swatches { display: flex; gap: 8px; padding: 4px 0; }
+    .swatches label { padding: 0; }
+    .swatches input { display: none; }
+    .swatches span { width: 24px; height: 24px; border-radius: 50%; display: block; border: 2px solid transparent; box-shadow: 0 0 0 1px #0002; }
+    .swatches input:checked + span { border-color: #fff; box-shadow: 0 0 0 2px #1f2430; }
+    select { padding: 4px 6px; border-radius: 6px; border: 1px solid #c9ced9; }
+    small { color: #6b7280; display: block; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Polygon Plus</h1>
+
+  <h2>Aparência</h2>
+  <label><input type="checkbox" data-key="dark"> Modo escuro</label>
+  <label><input type="checkbox" data-key="modern"> Visual moderno</label>
+  <label><input type="checkbox" data-key="wide"> Usar largura total</label>
+  <div class="swatches" id="accent">
+    <label><input type="radio" name="accent" value="#4f7cff"><span style="background:#4f7cff"></span></label>
+    <label><input type="radio" name="accent" value="#7c5cff"><span style="background:#7c5cff"></span></label>
+    <label><input type="radio" name="accent" value="#12a37f"><span style="background:#12a37f"></span></label>
+    <label><input type="radio" name="accent" value="#e8590c"><span style="background:#e8590c"></span></label>
+    <label><input type="radio" name="accent" value="#d6336c"><span style="background:#d6336c"></span></label>
+  </div>
+  <label>Densidade:
+    <select id="density">
+      <option value="comfortable">Confortável</option>
+      <option value="compact">Compacta</option>
+    </select>
+  </label>
+
+  <h2>Usabilidade</h2>
+  <label><input type="checkbox" data-key="filter"> Filtro em tabelas grandes</label>
+  <label><input type="checkbox" data-key="verdicts"> Colorir veredictos</label>
+  <label><input type="checkbox" data-key="copy"> Botão copiar em blocos de código</label>
+  <label><input type="checkbox" data-key="shortcuts"> Atalhos (Ctrl+Enter, /)</label>
+  <label><input type="checkbox" data-key="tabindent"> Tab indenta em textareas</label>
+  <label><input type="checkbox" data-key="totop"> Botão “voltar ao topo”</label>
+
+  <small>As mudanças são aplicadas na hora.</small>
+  <script src="popup.js"></script>
+</body>
+</html>
