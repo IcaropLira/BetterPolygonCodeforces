@@ -13,6 +13,7 @@
     .swatches span { width: 24px; height: 24px; border-radius: 50%; display: block; border: 2px solid transparent; box-shadow: 0 0 0 1px #0002; }
     .swatches input:checked + span { border-color: #fff; box-shadow: 0 0 0 2px #1f2430; }
     select { padding: 4px 6px; border-radius: 6px; border: 1px solid #c9ced9; }
+    input[type="text"], input[type="password"] { width: 100%; box-sizing: border-box; padding: 5px 8px; margin: 3px 0; border-radius: 6px; border: 1px solid #c9ced9; }
     small { color: #6b7280; display: block; margin-top: 12px; }
   </style>
 </head>
@@ -44,6 +45,11 @@
   <label><input type="checkbox" data-key="shortcuts"> Atalhos (Ctrl+Enter, /)</label>
   <label><input type="checkbox" data-key="tabindent"> Tab indenta em textareas</label>
   <label><input type="checkbox" data-key="totop"> Botão “voltar ao topo”</label>
+
+  <h2>Importar zip (API do Polygon)</h2>
+  <input type="text" id="apiKey" placeholder="API key" autocomplete="off" spellcheck="false">
+  <input type="password" id="apiSecret" placeholder="API secret" autocomplete="off">
+  <small>Gere em Settings → API do Polygon. Ficam só neste navegador. Depois use o botão “Importar zip” na página Problems.</small>
 
   <small>As mudanças são aplicadas na hora.</small>
   <script src="popup.js"></script>

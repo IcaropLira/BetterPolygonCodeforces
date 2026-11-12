@@ -10,6 +10,13 @@ api.storage.local.get(DEFAULTS).then((cfg) => {
     r.checked = r.value === cfg.accent;
     r.addEventListener("change", () => api.storage.local.set({ accent: r.value }));
   });
+  api.storage.local.get({ apiKey: "", apiSecret: "" }).then((k) => {
+    for (const id of ["apiKey", "apiSecret"]) {
+      const i = document.getElementById(id);
+      i.value = k[id];
+      i.addEventListener("change", () => api.storage.local.set({ [id]: i.value.trim() }));
+    }
+  });
   const d = document.getElementById("density");
   d.value = cfg.density;
   d.addEventListener("change", () => api.storage.local.set({ density: d.value }));

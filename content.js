@@ -185,7 +185,8 @@
   api.storage.local.get(DEFAULTS).then((saved) => { cfg = { ...DEFAULTS, ...saved }; applyClasses(); });
   api.storage.onChanged.addListener((changes, area) => {
     if (area !== "local") return;
-    for (const k in changes) cfg[k] = changes[k].newValue;
+    // só chaves de configuração: apiKey/apiSecret nunca devem ir para o localStorage da página
+    for (const k in changes) if (k in DEFAULTS) cfg[k] = changes[k].newValue;
     applyClasses();
   });
 
