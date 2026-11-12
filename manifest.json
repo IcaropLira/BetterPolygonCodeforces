@@ -1,14 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Polygon Plus",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Melhora a aparência e a usabilidade do Polygon (Codeforces): modo escuro, layout moderno, filtro de tabelas, atalhos e mais.",
   "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": ["https://polygon.codeforces.com/*"],
       "css": ["styles.css"],
-      "js": ["content.js"],
+      "js": ["content.js", "zip.js", "pkg.js", "polygon-api.js", "importer.js"],
       "run_at": "document_start"
     }
   ],

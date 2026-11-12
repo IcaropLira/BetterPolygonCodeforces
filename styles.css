@@ -224,3 +224,12 @@ html.pgx-on-modern h1, html.pgx-on-modern h2, html.pgx-on-modern h3 { letter-spa
 /* Links do painel lateral e ações de linha com respiro */
 html.pgx-on-modern table.pgx-data td a { padding: 1px 2px; border-radius: 4px; }
 html.pgx-on-modern table.pgx-data td a:hover { background: color-mix(in srgb, var(--pgx-accent) 14%, transparent); text-decoration: none; }
+
+/* ===================== v1.3: importar zip ===================== */
+.pgx-import-bar { margin: 10px 0; }
+#pgx-import-status { margin-top: 8px; padding: 8px 12px; border: 1px solid #c9ced9; border-radius: 8px; max-width: 720px; font-size: 13px; }
+#pgx-import-status progress { width: 100%; }
+#pgx-import-status ul { margin: 4px 0 6px 18px; padding: 0; }
+#pgx-import-status.pgx-import-ok { border-color: #12a37f; }
+#pgx-import-status.pgx-import-warn { border-color: #e8890c; }
+#pgx-import-status.pgx-import-err { border-color: #d6336c; }
